@@ -1,17 +1,26 @@
-/* Réinitialiser les marges et les paddings par défaut */
+/* Réinitialiser les marges et les paddings par défaut pour tous les éléments */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fixer la hauteur de la page et désactiver le défilement */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Style global du corps de la page */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #333, #000 50%);
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
-
+/* Style du header */
 header {
     display: flex;
     justify-content: space-between;
@@ -19,30 +28,39 @@ header {
     background-color: #333;
     padding: 10px 20px;
     width: 100%;
+    flex: 0 0 auto;
 }
 
+/* Style du titre du site*/
 .header-left {
-    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
     font-weight: bold;
-    color: #ff0000; 
+    color: #ff0000;
 }
 
+/* Style de la navbar*/
 .header-right a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3em;
     margin-left: 15px;
     text-decoration: none;
     color: #fff;
 }
 
 .header-right a:hover {
-    color: #ff0000; 
+    color: #ff0000;
 }
-
 
 main {
     padding: 20px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
-
 
 .main-content {
     display: flex;
@@ -51,26 +69,32 @@ main {
     background: linear-gradient(to right, #333, #000 50%);
     padding: 20px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
+/*Emplacement du gif*/
 .text-content {
-    flex: 1;
-    padding-right: 20px;
+    flex: 2;
 }
 
 .text-content h1 {
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 270px;
     font-size: 2.5em;
     color: #ff0000;
 }
 
 .text-content h2 {
-    margin: 10px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 270px;
+    margin-top: 10px;
     font-size: 1.8em;
     color: #ff0000;
 }
 
+/* Style pour le conteneur des boutons */
 .buttons {
+    margin-left: 270px;
     margin-top: 20px;
 }
 
@@ -88,11 +112,10 @@ main {
     background-color: #cc0000;
 }
 
+/* Style pour le conteneur d'image */
 .image-content {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .image-placeholder img {
@@ -100,12 +123,12 @@ main {
     height: auto;
 }
 
-
+/* Style pour la section des cartes */
 .card-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    width: 100%;
+    width: 85%;
 }
 
 .card {
@@ -113,26 +136,36 @@ main {
     border: 1px solid #2e2e2e;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    height: 410px; 
 }
 
+/* Style pour l'image dans les cartes */
 .card-image img {
     width: 100%;
-    height: auto;
+    height: 260px; 
+    object-fit: cover;
 }
 
+/* Style pour le texte dans les cartes */
 .card-text h3 {
     margin: 10px;
-    font-size: 2em;
+    font-size: 1.5em; 
     color: #ff0000;
-    text-align: center;
 }
 
 .card-text p {
-    margin: 10px 0;
-    text-align: center;
-    font-size: 1.3em;
+    margin: 10px;
+    font-size: 1em; 
 }
 
+/* Conteneur pour les boutons des cartes,pour les aligner à droite */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; 
+}
+
+/* Style pour le bouton dans chaque carte */
 .card-text button {
     padding: 10px 20px;
     background-color: #ff0000;
@@ -140,19 +173,18 @@ main {
     cursor: pointer;
     color: #fff;
     font-size: 1em;
-    display: block; 
-    margin: 10px auto;
 }
 
 .card-text button:hover {
     background-color: #333;
 }
 
+/* Style pour le footer */
 footer {
     background-color: #2e2e2e;
     padding: 10px;
     text-align: center;
     width: 100%;
     color: #fff;
+    flex: 0 0 auto;
 }
-
